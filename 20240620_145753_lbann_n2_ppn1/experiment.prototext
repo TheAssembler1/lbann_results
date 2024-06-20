@@ -1,0 +1,110 @@
+data_reader {
+  reader {
+    name: "mnist"
+    role: "train"
+    shuffle: true
+    data_filedir: "/pscratch/sd/n/nlewi26/lbann_data/mnist"
+    data_filename: "train-images-idx3-ubyte"
+    label_filename: "train-labels-idx1-ubyte"
+    validation_fraction: 0.1
+    fraction_of_data_to_use: 1.0
+    transforms {
+      scale {
+        scale: 0.003921569
+      }
+    }
+  }
+  reader {
+    name: "mnist"
+    role: "test"
+    shuffle: true
+    data_filedir: "/pscratch/sd/n/nlewi26/lbann_data/mnist"
+    data_filename: "t10k-images-idx3-ubyte"
+    label_filename: "t10k-labels-idx1-ubyte"
+    fraction_of_data_to_use: 1.0
+    transforms {
+      scale {
+        scale: 0.003921569
+      }
+    }
+  }
+}
+model {
+  objective_function {
+    layer_term {
+      scale_factor: 1.0
+      layer: "layer5"
+    }
+  }
+  metric {
+    layer_metric {
+      layer: "layer6"
+      name: "accuracy"
+      unit: "%"
+    }
+  }
+  num_epochs: 5
+  layer {
+    name: "layer1"
+    children: "layer3"
+    input {
+      data_field: "samples"
+    }
+  }
+  layer {
+    name: "layer3"
+    parents: "layer1"
+    children: "layer4"
+    fully_connected {
+      num_neurons: 10
+      has_bias: true
+    }
+  }
+  layer {
+    name: "layer4"
+    parents: "layer3"
+    children: "layer5"
+    children: "layer6"
+    softmax {
+    }
+  }
+  layer {
+    name: "layer2"
+    children: "layer5"
+    children: "layer6"
+    input {
+      data_field: "labels"
+    }
+  }
+  layer {
+    name: "layer6"
+    parents: "layer4"
+    parents: "layer2"
+    cross_entropy {
+    }
+  }
+  layer {
+    name: "layer5"
+    parents: "layer4"
+    parents: "layer2"
+    cross_entropy {
+    }
+  }
+  callback {
+    print {
+    }
+  }
+  callback {
+    timer {
+    }
+  }
+}
+optimizer {
+  sgd {
+    learn_rate: 0.01
+    momentum: 0.9
+  }
+}
+trainer {
+  mini_batch_size: 64
+}

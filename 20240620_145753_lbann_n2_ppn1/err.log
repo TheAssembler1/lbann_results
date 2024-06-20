@@ -1,0 +1,3 @@
+LBANN warning on rank 1 (/global/u1/n/nlewi26/src/spack/var/spack/stage/spack-stage-lbann-0.104-654gueas7uataaqn4wkm33sx64arboqp/spack-src/src/utils/threads/thread_pool.cpp:156): Insufficient number of allocated cores to respect I/O CPU offset
+LBANN warning on rank 0 (/global/u1/n/nlewi26/src/spack/var/spack/stage/spack-stage-lbann-0.104-654gueas7uataaqn4wkm33sx64arboqp/spack-src/src/utils/threads/thread_pool.cpp:156): Insufficient number of allocated cores to respect I/O CPU offset
+starting build_model_from_prototext

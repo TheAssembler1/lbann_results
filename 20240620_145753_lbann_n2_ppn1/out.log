@@ -1,0 +1,163 @@
+Started at Thu 20 Jun 2024 02:57:53 PM PDT
+0: WARNING: node has 8 NUMA nodes but you have 1 processes per node
+
+
+==============================================================
+STARTING lbann with this command line:
+/global/u1/n/nlewi26/src/spack/opt/spack/linux-sles15-zen3/gcc-12.3.0/lbann-0.104-654gueas7uataaqn4wkm33sx64arboqp/bin/lbann --prototext=/pscratch/sd/n/nlewi26/20240620_145753_lbann_n2_ppn1/experiment.prototext 
+
+Default tensor core settings:
+   cuDNN: NOT using tensor core math.
+  cuBLAS: NOT using tensor core math.
+
+protobuf_utils::verify_prototext; starting verify for 1 models
+	Num. I/O Threads: 4 (Limited to # Unused Compute Cores [251] # of RNG banks [128] or 1) at offset 5
+mnist_reader is set
+starting lbann::mnist_reader::load
+read labels!
+calling select_subset_of_data; m_shuffled_indices.size: 60000
+Training using 90% of the training data set, which is 54000 samples.
+validation training using 10% of the training data set, which is 6000 samples.
+mnist_reader is set
+starting lbann::mnist_reader::load
+read labels!
+calling select_subset_of_data; m_shuffled_indices.size: 10000
+Testing using 10000 samples.
+Hardware properties (for master process)
+  Processes on node          : 1
+  Total number of processes  : 2
+  OpenMP threads per process : 4
+  I/O threads per process (+offset) : 4 (+5)
+  Background I/O enabled     : 1
+
+Running: LLNL LBANN version: 0.104.0 (develop-2024-06-16-17-g6b052c3)
+         LLNL Hydrogen version: 1.5.3 (develop-2024-06-16-17-g6b052c3)
+         LLNL Aluminum version: 1.4.1 (develop-2024-06-16-17-g6b052c3)
+
+Build settings
+  Type     : Release
+  Aluminum : detected
+  GPU     : NOT detected
+  cuDNN    : NOT detected
+  CUB      : NOT detected
+  MV2_USE_CUDA : 
+
+DiHydrogen Features:
+  DaCe : disabled
+
+Aluminum Features:
+  NCCL : disabled
+
+Trainer settings
+  Trainers              : 1
+  Processes per trainer : 2
+  Grid dimensions       : 1 x 2
+
+
+trainer0
+  Background I/O: true
+
+
+Running with these parameters:
+ General:
+  datatype size:              4
+  mini_batch_size:            64
+  num_epochs:                 5
+  hydrogen_block_size:        0
+  procs_per_trainer:          2
+  serialize_io:               0
+  caliper:                    disabled
+  cuda:                       disabled
+  cudnn:                      disabled
+  root_random_seed[t][r]:     [0][0]=0000000042 [0][1]=0000000042 
+  random_seed[t][r]:          [0][0]=2654438505 [0][1]=2654438505 
+  data_seq_random_seed[t][r]: [0][0]=2654438505 [0][1]=2654438505 
+  deterministic_exec:         disabled
+  data_layout:                     (only used for metrics)
+Training with LLNL LBANN version 0.104.0
+--------------------------------------------------------------------------------------------
+[0] Epoch : stats formated [tr/v/te/to] iter/epoch = [844/94/157/0]
+            Global MB = [  64/  64/  64/   0]  Global last MB = [  48/  48/  16/   0]
+--------------------------------------------------------------------------------------------
+model0 (instance 0) training epoch 0 objective function : 0.49851
+model0 (instance 0) training epoch 0 accuracy : 49.851%
+model0 (instance 0) training epoch 0 run time : 0.964118s
+model0 (instance 0) training epoch 0 mini-batch time statistics : 0.00114103s mean, 0.000994484s median, 0.0895671s max, 0.000845509s min, 0.00304851s stdev
+model0 (instance 0) validation objective function : 0.385152
+model0 (instance 0) validation accuracy : 38.5152%
+model0 (instance 0) validation run time : 0.0449824s
+model0 (instance 0) validation mini-batch time statistics : 0.00047484s mean, 0.00047514s median, 0.000539543s max, 0.000312328s min, 1.89907e-05s stdev
+--------------------------------------------------------------------------------------------
+[1] Epoch : stats formated [tr/v/te/to] iter/epoch = [844/94/157/0]
+            Global MB = [  64/  64/  64/   0]  Global last MB = [  48/  48/  16/   0]
+--------------------------------------------------------------------------------------------
+model0 (instance 0) training epoch 1 objective function : 0.340906
+model0 (instance 0) training epoch 1 accuracy : 34.0906%
+model0 (instance 0) training epoch 1 run time : 0.77772s
+model0 (instance 0) training epoch 1 mini-batch time statistics : 0.000920284s mean, 0.000972322s median, 0.00293521s max, 0.000745197s min, 0.00011361s stdev
+model0 (instance 0) validation objective function : 0.348511
+model0 (instance 0) validation accuracy : 34.8511%
+model0 (instance 0) validation run time : 0.0412272s
+model0 (instance 0) validation mini-batch time statistics : 0.00043563s mean, 0.000409033s median, 0.00055889s max, 0.000380729s min, 5.38353e-05s stdev
+--------------------------------------------------------------------------------------------
+[2] Epoch : stats formated [tr/v/te/to] iter/epoch = [844/94/157/0]
+            Global MB = [  64/  64/  64/   0]  Global last MB = [  48/  48/  16/   0]
+--------------------------------------------------------------------------------------------
+model0 (instance 0) training epoch 2 objective function : 0.316817
+model0 (instance 0) training epoch 2 accuracy : 31.6817%
+model0 (instance 0) training epoch 2 run time : 0.748792s
+model0 (instance 0) training epoch 2 mini-batch time statistics : 0.000886024s mean, 0.000796045s median, 0.00275527s max, 0.00073108s min, 0.000165694s stdev
+model0 (instance 0) validation objective function : 0.333499
+model0 (instance 0) validation accuracy : 33.3499%
+model0 (instance 0) validation run time : 0.0382485s
+model0 (instance 0) validation mini-batch time statistics : 0.000403954s mean, 0.000403022s median, 0.000449481s max, 0.000239278s min, 2.03995e-05s stdev
+--------------------------------------------------------------------------------------------
+[3] Epoch : stats formated [tr/v/te/to] iter/epoch = [844/94/157/0]
+            Global MB = [  64/  64/  64/   0]  Global last MB = [  48/  48/  16/   0]
+--------------------------------------------------------------------------------------------
+model0 (instance 0) training epoch 3 objective function : 0.303831
+model0 (instance 0) training epoch 3 accuracy : 30.3831%
+model0 (instance 0) training epoch 3 run time : 0.678023s
+model0 (instance 0) training epoch 3 mini-batch time statistics : 0.000802182s mean, 0.00078361s median, 0.00474443s max, 0.000735729s min, 0.000156483s stdev
+model0 (instance 0) validation objective function : 0.325505
+model0 (instance 0) validation accuracy : 32.5505%
+model0 (instance 0) validation run time : 0.0385535s
+model0 (instance 0) validation mini-batch time statistics : 0.000407155s mean, 0.000405205s median, 0.00044396s max, 0.000237755s min, 2.19944e-05s stdev
+--------------------------------------------------------------------------------------------
+[4] Epoch : stats formated [tr/v/te/to] iter/epoch = [844/94/157/0]
+            Global MB = [  64/  64/  64/   0]  Global last MB = [  48/  48/  16/   0]
+--------------------------------------------------------------------------------------------
+model0 (instance 0) training epoch 4 objective function : 0.295482
+model0 (instance 0) training epoch 4 accuracy : 29.5482%
+model0 (instance 0) training epoch 4 run time : 0.68279s
+model0 (instance 0) training epoch 4 mini-batch time statistics : 0.000807829s mean, 0.000783921s median, 0.0011599s max, 0.00076235s min, 6.25716e-05s stdev
+model0 (instance 0) validation objective function : 0.318177
+model0 (instance 0) validation accuracy : 31.8177%
+model0 (instance 0) validation run time : 0.0488953s
+model0 (instance 0) validation mini-batch time statistics : 0.000517212s mean, 0.000474679s median, 0.004472s max, 0.000312869s min, 0.000412727s stdev
+====================================================================================================
+Timer: SGD::sgd_train (trainer:0)
+Label                               | Samples  | Total      | Mean       | Min        | Max        |
+------------------------------------|----------|------------|------------|------------|------------|
+train()                             |        1 | 4.0638e+00 | 4.0638e+00 | 4.0638e+00 | 4.0638e+00 |
+ train_begin callbacks              |        1 | 1.4730e-06 | 1.4730e-06 | 1.4730e-06 | 1.4730e-06 |
+ epoch_begin callbacks              |        5 | 7.3362e-05 | 1.4672e-05 | 1.3256e-05 | 1.9177e-05 |
+ train minibatch                    |     4220 | 3.8495e+00 | 9.1221e-04 | 7.3182e-04 | 8.9576e-02 |
+  batch_begin callbacks             |     4220 | 1.1295e-03 | 2.6765e-07 | 2.2000e-07 | 3.2760e-06 |
+  forward prop*                     |     4220 | 1.1910e+00 | 2.8224e-04 | 1.9916e-04 | 8.5063e-02 |
+  back prop*                        |     4220 | 1.7064e+00 | 4.0435e-04 | 3.0609e-04 | 2.5459e-03 |
+  batch_end callbacks               |     4220 | 1.6989e-03 | 4.0259e-07 | 3.2000e-07 | 6.6220e-06 |
+ epoch_end callbacks                |        5 | 4.5415e-04 | 9.0830e-05 | 8.0434e-05 | 1.2098e-04 |
+ train_end callbacks                |        1 | 2.9660e-06 | 2.9660e-06 | 2.9660e-06 | 2.9660e-06 |
+evaluate(validation)                |        5 | 2.1197e-01 | 4.2395e-02 | 3.8261e-02 | 4.8908e-02 |
+ eval_begin callbacks               |        5 | 5.6730e-06 | 1.1346e-06 | 7.5200e-07 | 2.1850e-06 |
+ eval minibatch                     |      470 | 2.1074e-01 | 4.4838e-04 | 2.3837e-04 | 4.4727e-03 |
+  batch_begin callbacks             |      470 | 1.1118e-04 | 2.3656e-07 | 1.9000e-07 | 7.9100e-07 |
+  batch_end callbacks               |      470 | 1.8074e-04 | 3.8456e-07 | 2.6000e-07 | 9.3200e-07 |
+ eval_end callbacks                 |        5 | 1.3321e-04 | 2.6641e-05 | 2.5409e-05 | 2.8174e-05 |
+====================================================================================================
+model0 (instance 0) test objective function : 0.285138
+model0 (instance 0) test accuracy : 28.5138%
+model0 (instance 0) test run time : 0.0738472s
+model0 (instance 0) test mini-batch time statistics : 0.000467996s mean, 0.000470391s median, 0.000531498s max, 0.000320603s min, 1.96129e-05s stdev
+Finished at Thu 20 Jun 2024 02:58:10 PM PDT
